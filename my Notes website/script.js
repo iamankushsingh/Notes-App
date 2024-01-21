@@ -5,13 +5,13 @@ const createNote = (savedContent = '') => {
   const note = document.createElement('div');
   note.classList.add('notes');
 
-  const htmlData = 
+  const htmlData = `
     <div class="operation">
       <i id="edit" class="fa-solid fa-pencil fa-2x"></i>
       <i id="delete" class="fa-solid fa-trash-arrow-up fa-2x"></i>
       <i id="save" class="far fa-save fa-2x"></i>
     </div>
-    <textarea name="" class="notes-area" cols="140" rows="16" ${savedContent ? 'readonly' : ''}>${savedContent}</textarea>;
+    <textarea name="" class="notes-area" cols="140" rows="16" ${savedContent ? 'readonly' : ''}>${savedContent}</textarea>`;
 
   note.insertAdjacentHTML('afterbegin', htmlData);
   document.body.appendChild(note);
@@ -38,7 +38,7 @@ const createNote = (savedContent = '') => {
     if (textarea.hasAttribute('readonly')) {
       textarea.removeAttribute('readonly');
     } else {
-      textarea.setAttribute('readonly', 'false');
+      textarea.setAttribute('readonly', 'true');
     }
   };
 };
